@@ -10,7 +10,7 @@ def guardar_img(file_name, url):
     response = requests.get(url, stream=True)
 
     root_directory = os.path.dirname(os.path.abspath(__file__))
-    static_directory = os.path.join(root_directory, "static/images")
+    static_directory = os.path.join(root_directory, r"static/images")
     file_path = os.path.join(static_directory, file_name)
 
     with open(file_path, "wb") as file:
