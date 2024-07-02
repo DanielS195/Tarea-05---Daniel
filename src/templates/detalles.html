@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>Detalles</h1>
+
+<div>
+    <table class="table" border="1">
+        <thead>
+          <tr>
+            <th scope="col">strDrink</th>
+            <th scope="col">strCategory</th>
+            <th scope="col">strGlass</th>
+            <th scope="col">strInstructions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td>{{data[0]}}</td>
+              <td>{{data[1]}}</td>
+              <td>{{data[2]}}</td>
+              <td>{{data[3]}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Lista de ingredientes</h2>
+<div>
+    <ol class="list-group list-group-numbered">
+        <li class="list-group-item">{{data[4]}}</li>
+        <li class="list-group-item">{{data[5]}}</li>
+        <li class="list-group-item">{{data[6]}}</li>
+        <li class="list-group-item">{{data[7]}}</li>
+        <li class="list-group-item">{{data[8]}}</li>
+    </ol>
+</div>
+
+<h2>Imagen referencial</h2>
+<div>
+    <img src="{{ url_for('static', filename='images/' + data[0] + '.jpg') }}" style="width:250px;height:300px;">
+</div>
+
+<p></p>
+
+<div>
+    <button><a href="/">BACK</a></button>
+</div>
+{% endblock %}

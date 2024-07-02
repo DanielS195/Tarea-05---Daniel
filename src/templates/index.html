@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>Listado de bebidas</h1>
+
+<div>
+    <table class="table" border="1">
+        <thead>
+          <tr>
+            <th scope="col">strDrink</th>
+            <th scope="col">strCategory</th>
+            <th scope="col">strGlass</th>
+            <th scope="col">Detalles</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            {% for drink in data %}
+              <tr>
+                <td>{{drink[0]}}</td>
+                <td>{{drink[1]}}</td>
+                <td>{{drink[2]}}</td>
+                <td><a href="/detalles/{{drink[0]}}">Ver mas</a></td>
+              </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
